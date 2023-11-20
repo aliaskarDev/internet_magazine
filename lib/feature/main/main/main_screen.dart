@@ -63,9 +63,14 @@ class _MainScreenState extends State<MainScreen> {
                 child: const MainStories(),
               ),
               SizedBox(height: height * 0.01),
-              Image.asset(
-                MyImages.card,
-                scale: 3,
+              InkWell(
+                onTap: () {
+                  Navigator.pushNamed(context, '/profile');
+                },
+                child: Image.asset(
+                  MyImages.card,
+                  scale: 3,
+                ),
               ),
               SizedBox(height: height * 0.02),
               const NewAndPromotions(),
