@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:internet_magazine/constants/images_path.dart';
 import 'package:internet_magazine/ui/colors.dart';
+import 'package:internet_magazine/ui/text_style.dart';
 import 'package:stories_for_flutter/stories_for_flutter.dart';
 
 class MainStories extends StatelessWidget {
@@ -9,14 +10,15 @@ class MainStories extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Stories(
-      highLightColor: MyColors.storiesRadiusBlue,
-      spaceBetweenStories: 5.5,
-      circlePadding: 3,
-      showStoryName: false,
-      borderThickness: 2,
+      spaceBetweenStories: 15,
+      borderThickness: 0,
+      circlePadding: 0,
+      storyCircleTextStyle: MyTextSTyle.style400w12.copyWith(
+        color: AppColors.lightGrey,
+      ),
       storyItemList: [
         StoryItem(
-          name: '',
+          name: 'Скидки',
           thumbnail: const AssetImage(
             MyImages.stories1,
           ),
@@ -36,7 +38,7 @@ class MainStories extends StatelessWidget {
           ],
         ),
         StoryItem(
-          name: '',
+          name: 'Акции',
           thumbnail: const AssetImage(
             MyImages.stories2,
           ),
@@ -56,7 +58,7 @@ class MainStories extends StatelessWidget {
           ],
         ),
         StoryItem(
-          name: '',
+          name: 'Распродажа',
           thumbnail: const AssetImage(
             MyImages.stories3,
           ),
@@ -76,7 +78,7 @@ class MainStories extends StatelessWidget {
           ],
         ),
         StoryItem(
-          name: '',
+          name: 'Подарки',
           thumbnail: const AssetImage(
             MyImages.stories4,
           ),
@@ -96,7 +98,7 @@ class MainStories extends StatelessWidget {
           ],
         ),
         StoryItem(
-          name: '',
+          name: 'Подарки',
           thumbnail: const AssetImage(
             MyImages.stories5,
           ),

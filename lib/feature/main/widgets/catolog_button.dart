@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:internet_magazine/constants/const.dart';
-import 'package:internet_magazine/constants/icons_path.dart';
 import 'package:internet_magazine/ui/colors.dart';
 import 'package:internet_magazine/ui/text_style.dart';
 
-class MainButton extends StatelessWidget {
-  const MainButton({super.key});
+class CatologButton extends StatelessWidget {
+  const CatologButton({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +15,7 @@ class MainButton extends StatelessWidget {
         Navigator.pushNamed(context, '/catolog');
       },
       child: Container(
-        height: height * 0.08,
+        height: height * 0.06,
         margin: EdgeInsets.symmetric(
           horizontal: width * 0.04,
           vertical: height * 0.02,
@@ -27,23 +25,28 @@ class MainButton extends StatelessWidget {
         ),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(
-            38,
+            10,
           ),
-          color: MyColors.mySecondBlue,
+          color: AppColors.lightestMainColor,
         ),
         child: Center(
           child: Row(
             children: [
-              SvgPicture.asset(
-                MyIcons.layer,
-              ),
               SizedBox(width: width * 0.015),
               Text(
                 catolog,
                 style: MyTextSTyle.style500w20.copyWith(
-                  color: MyColors.mySecondWhite,
+                  color: Colors.black,
                 ),
               ),
+              SizedBox(
+                width: width * 0.02,
+              ),
+              const Icon(
+                Icons.arrow_forward_rounded,
+                size: 25,
+                color: AppColors.mainColor,
+              )
             ],
           ),
         ),

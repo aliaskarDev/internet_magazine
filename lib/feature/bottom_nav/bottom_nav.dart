@@ -41,13 +41,14 @@ class BottomNavigationState extends State<BottomNavigation> {
           return Container(
             height: 75,
             decoration: const BoxDecoration(
-              color: Colors.black,
+              color: AppColors.lightestGrey,
               borderRadius: BorderRadius.vertical(
                 top: Radius.circular(
-                  24,
+                  10,
                 ),
               ),
             ),
+            padding: const EdgeInsets.symmetric(horizontal: 30),
             child: ClipRRect(
               borderRadius: const BorderRadius.vertical(
                 top: Radius.circular(
@@ -55,19 +56,23 @@ class BottomNavigationState extends State<BottomNavigation> {
                 ),
               ),
               child: BottomNavigationBar(
-                showSelectedLabels: true,
                 showUnselectedLabels: true,
+                type: BottomNavigationBarType.fixed,
+                selectedItemColor: AppColors.mainColor,
                 useLegacyColorScheme: false,
                 selectedLabelStyle: MyTextSTyle.style400w10.copyWith(
                   color: MyColors.mySecondBlue,
                 ),
                 unselectedLabelStyle: MyTextSTyle.style400w10.copyWith(
-                  color: MyColors.mySecondBlue,
+                  color: Colors.black,
                 ),
                 items: [
                   BottomNavigationBarItem(
                     icon: SvgPicture.asset(
                       MyIcons.main,
+                    ),
+                    activeIcon: SvgPicture.asset(
+                      MyIcons.activeMain,
                     ),
                     label: BottomText.main,
                   ),
@@ -75,19 +80,28 @@ class BottomNavigationState extends State<BottomNavigation> {
                     icon: SvgPicture.asset(
                       MyIcons.catolog,
                     ),
+                    activeIcon: SvgPicture.asset(
+                      MyIcons.activeCatolog,
+                    ),
                     label: BottomText.catalog,
                   ),
                   BottomNavigationBarItem(
                     icon: SvgPicture.asset(
                       MyIcons.location,
                     ),
+                    activeIcon: SvgPicture.asset(
+                      MyIcons.activeLocation,
+                    ),
                     label: BottomText.location,
                   ),
                   BottomNavigationBarItem(
                     icon: SvgPicture.asset(
-                      MyIcons.profile,
+                      MyIcons.magazine,
                     ),
-                    label: BottomText.profile,
+                    activeIcon: SvgPicture.asset(
+                      MyIcons.activeMagazine,
+                    ),
+                    label: '',
                   ),
                 ],
                 currentIndex: selectedIndex,

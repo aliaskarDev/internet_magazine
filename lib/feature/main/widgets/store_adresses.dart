@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:internet_magazine/constants/const.dart';
+import 'package:internet_magazine/constants/sheets.dart';
 import 'package:internet_magazine/feature/main/widgets/store_adresses_container.dart';
 import 'package:internet_magazine/ui/colors.dart';
 import 'package:internet_magazine/ui/text_style.dart';
@@ -26,11 +27,20 @@ class StoreAdresses extends StatelessWidget {
                   color: MyColors.myBlack,
                 ),
               ),
+              const Spacer(),
               Text(
                 all,
                 style: MyTextSTyle.style500w14.copyWith(
                   color: MyColors.mySecondBlue,
                 ),
+              ),
+              SizedBox(
+                width: width * 0.01,
+              ),
+              const Icon(
+                Icons.arrow_forward,
+                size: 15,
+                color: AppColors.mainColor,
               ),
             ],
           ),
@@ -41,11 +51,13 @@ class StoreAdresses extends StatelessWidget {
             left: width * 0.03,
           ),
           child: SizedBox(
-            height: height * 0.2,
+            height: height * 0.31,
             child: ListView.builder(
               scrollDirection: Axis.horizontal,
-              itemBuilder: (context, index) => const StoreAdressesContainer(),
-              itemCount: 5,
+              itemBuilder: (context, index) => StoreAdressesContainer(
+                image: magazineImage[index],
+              ),
+              itemCount: magazineImage.length,
             ),
           ),
         ),
